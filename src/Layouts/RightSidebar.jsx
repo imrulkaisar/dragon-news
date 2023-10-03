@@ -1,10 +1,16 @@
-import Heading2 from "../Components/Heading2";
+import Advertize from "../Components/Advertize";
+import QZone from "../Components/QZone";
+import SocialLinks from "../Components/SocialLinks";
+import SocialLogins from "../Components/SocialLogins";
 
 const RightSidebar = () => {
   return (
-    <div>
-      <Heading2>Right sidebar</Heading2>
-    </div>
+    <aside className="space-y-6">
+      <SocialLogins />
+      <SocialLinks />
+      <QZone />
+      <Advertize />
+    </aside>
   );
 };
 

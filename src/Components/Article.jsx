@@ -60,6 +60,7 @@ const Article = ({ data }) => {
               initialRating={number}
               fullSymbol={<AiFillStar />}
               emptySymbol={<AiOutlineStar />}
+              readonly={true}
             />
             <span>{number}</span>
           </div>

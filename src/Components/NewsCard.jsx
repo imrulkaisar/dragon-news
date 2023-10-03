@@ -8,7 +8,7 @@ const NewsCard = ({ data }) => {
   return (
     <div className="space-y-3">
       <Link to={`/post/id`}>
-        <img className="rounded-lg" src={thumbnail_url} alt="" />
+        <img className="rounded-lg w-full" src={thumbnail_url} alt="" />
       </Link>
 
       <h5>
