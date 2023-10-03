@@ -5,6 +5,7 @@ import Today from "../Components/Today";
 import Ticker from "../Components/Ticker";
 import { useLocation } from "react-router-dom";
 import Spacer from "../Components/Spacer";
+import Navbar from "../Components/Navbar";
 
 const Header = () => {
   const { pathname } = useLocation();
@@ -13,10 +14,16 @@ const Header = () => {
     <header className="text-center py-10">
       <ContainerArea className="space-y-3">
         <Logo />
+
         <p>Journalism Without Fear or Favour</p>
+
         <Today />
-        <Spacer height="20px" />
+
+        <Spacer height="10px" />
+
         {pathname === "/" && <Ticker />}
+
+        <Navbar />
       </ContainerArea>
     </header>
   );
