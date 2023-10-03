@@ -13,7 +13,7 @@ const LeftSidebar = () => {
   }
 
   return (
-    <div>
+    <div className="space-y-6">
       <div className="space-y-5">
         <Heading2>All Categories</Heading2>
         <ul className="categories ">

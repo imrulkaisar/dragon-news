@@ -10,9 +10,13 @@ const NewsCard = ({ data }) => {
       <Link to={`/post/id`}>
         <img className="rounded-lg" src={thumbnail_url} alt="" />
       </Link>
+
       <h5>
-        <Title>{title}</Title>
+        <Link>
+          <Title>{title}</Title>
+        </Link>
       </h5>
+
       <div className="flex justify-between items-center">
         <Link>Sport</Link>
         <div className="flex justify-end items-center gap-2 text-grayText text-base">

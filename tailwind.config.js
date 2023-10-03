@@ -9,6 +9,7 @@ export default {
         grayText: "#9F9F9F",
         grayBg: "#F3F3F3",
         highlighter: "#D72050",
+        golden: "#FF8C47",
       },
     },
   },
