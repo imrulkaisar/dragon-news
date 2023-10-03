@@ -22,3 +22,7 @@
     @apply text-heading;
   }
 }
+
+nav li .active {
+  @apply text-heading;
+}

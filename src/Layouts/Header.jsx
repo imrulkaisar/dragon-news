@@ -9,7 +9,6 @@ import Navbar from "../Components/Navbar";
 
 const Header = () => {
   const { pathname } = useLocation();
-  console.log(pathname);
   return (
     <header className="text-center py-10">
       <ContainerArea className="space-y-3">
