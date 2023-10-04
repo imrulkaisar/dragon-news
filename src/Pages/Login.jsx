@@ -1,8 +1,13 @@
 import Heading2 from "../Components/Heading2";
 import { Link } from "react-router-dom";
 import LoginForm from "../Components/LoginForm";
+import { useContext } from "react";
+import { UserContext } from "../Context/UserContext";
 
 const Login = () => {
+  const { user } = useContext(UserContext);
+  console.log(user);
+
   return (
     <div className="bg-grayBg py-36 flex justify-center">
       <div className="w-full max-w-xl bg-white p-16 space-y-8">
