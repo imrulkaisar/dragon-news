@@ -15,7 +15,7 @@ const Home = () => {
         <Heading2>Dragon News Home</Heading2>
         <div className="articles py-5 space-y-8">
           {blogs ? (
-            blogs.map((blog) => <Article key={blog.id} data={blog} />)
+            blogs.map((blog) => <Article key={blog._id} data={blog} />)
           ) : (
             <p>News are loading ...</p>
           )}

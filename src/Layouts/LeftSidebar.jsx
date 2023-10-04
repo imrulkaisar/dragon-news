@@ -37,7 +37,7 @@ const LeftSidebar = () => {
       </div>
       <div className="space-y-5">
         {filteredBlogs ? (
-          filteredBlogs.map((blog) => <NewsCard key={blog.id} data={blog} />)
+          filteredBlogs.map((blog) => <NewsCard key={blog._id} data={blog} />)
         ) : (
           <p>Loading ...</p>
         )}

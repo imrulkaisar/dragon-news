@@ -6,7 +6,6 @@ import { UserContext } from "../Context/UserContext";
 
 const Login = () => {
   const { user } = useContext(UserContext);
-  console.log(user);
 
   return (
     <div className="bg-grayBg py-36 flex justify-center">

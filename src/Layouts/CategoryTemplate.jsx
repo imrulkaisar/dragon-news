@@ -26,7 +26,7 @@ const CategoryTemplate = () => {
         </div>
         <div className="articles py-5 space-y-8">
           {catPosts ? (
-            catPosts.map((blog) => <Article key={blog.id} data={blog} />)
+            catPosts.map((blog) => <Article key={blog._id} data={blog} />)
           ) : (
             <p>News are loading ...</p>
           )}

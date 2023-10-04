@@ -1,16 +1,65 @@
 import { createContext, useEffect, useState } from "react";
+import {
+  createUserWithEmailAndPassword,
+  onAuthStateChanged,
+  signInWithEmailAndPassword,
+  signOut,
+  updateProfile,
+} from "firebase/auth";
+
+import auth from "../Authentications/FirebaseConfig";
 
 export const UserContext = createContext(null);
 
 const UserContextProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
+  const createUser = (email, password) => {
+    createUserWithEmailAndPassword(auth, email, password);
+  };
+
+  const updateUser = (data) => {
+    updateProfile(auth.currentUser, data);
+  };
+
+  const login = (email, password) => {
+    signInWithEmailAndPassword(auth, email, password)
+      .then((response) => {
+        console.log("Logged In:", response.user);
+      })
+      .catch((error) => console.error(error));
+  };
+
+  const logOut = () => {
+    signOut(auth)
+      .then((res) => {
+        console.log("Logged Out", res.user);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
   useEffect(() => {
-    setUser({ name: "Imrul Kaisar" });
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      if (currentUser) {
+        setUser(currentUser);
+
+        console.log("Current user:", currentUser);
+      }
+    });
+
+    return () => {
+      unsubscribe();
+    };
   }, []);
 
   const userInfo = {
     user,
+    createUser,
+    updateUser,
+    login,
+    logOut,
   };
 
   return (
