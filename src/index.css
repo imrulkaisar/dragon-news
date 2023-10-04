@@ -26,3 +26,6 @@
 nav li .active {
   @apply text-heading;
 }
+.categories li:has(.active) {
+  @apply bg-grayBg text-heading;
+}

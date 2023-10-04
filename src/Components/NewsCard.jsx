@@ -4,7 +4,7 @@ import Title from "./Title";
 import { FiCalendar } from "react-icons/fi";
 
 const NewsCard = ({ data }) => {
-  const { _id, title, thumbnail_url } = data;
+  const { _id, title, thumbnail_url, category_id } = data;
   return (
     <div className="space-y-3">
       <Link to={`/post/${_id}`}>
@@ -18,7 +18,7 @@ const NewsCard = ({ data }) => {
       </h5>
 
       <div className="flex justify-between items-center">
-        <Link>Sport</Link>
+        <Link to={`/category/${category_id}`}>Sport</Link>
         <div className="flex justify-end items-center gap-2 text-grayText text-base">
           <FiCalendar /> <span>Jan 4, 2022</span>
         </div>

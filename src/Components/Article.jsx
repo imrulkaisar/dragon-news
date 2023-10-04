@@ -48,7 +48,7 @@ const Article = ({ data }) => {
           <Title>{title}</Title>
         </Link>
 
-        <Link to={`/post/${_id}`}>
+        <Link className="block" to={`/post/${_id}`}>
           <img className="w-full" src={thumbnail_url} alt="" />
         </Link>
 

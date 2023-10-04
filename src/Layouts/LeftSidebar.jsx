@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import Heading2 from "../Components/Heading2";
 import { MainContext } from "../Context/MainContext";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import NewsCard from "../Components/NewsCard";
 
 const LeftSidebar = () => {
@@ -21,10 +21,12 @@ const LeftSidebar = () => {
             categories.map((category) => {
               return (
                 <li
-                  className="py-3 px-5 text-text hover:text-heading hover:underline first:bg-grayBg first:text-heading"
+                  className="py-3 px-5 text-text hover:text-heading hover:underline "
                   key={category.id}
                 >
-                  <Link to={`/category/${category.id}`}>{category.name}</Link>
+                  <NavLink to={`/category/${category.id}`}>
+                    {category.name}
+                  </NavLink>
                 </li>
               );
             })
