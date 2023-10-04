@@ -22,9 +22,9 @@ const Ticker = () => {
   return (
     <div className="bg-grayBg py-2 px-4 flex items-center">
       <span className="bg-highlighter text-white px-5 py-2 mr-4">Latest</span>
-      <p>
+      <div className="text-text">
         <Marquee>{marqueeText}</Marquee>
-      </p>
+      </div>
     </div>
   );
 };

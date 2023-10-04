@@ -1,20 +1,14 @@
 import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
 import { UserContext } from "../Context/UserContext";
 
 const LoginForm = () => {
   const { user, login } = useContext(UserContext);
-  const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
     const { email, password } = e.target;
     login(email.value, password.value);
   };
-
-  if (user) {
-    navigate("/");
-  }
 
   return (
     <div>

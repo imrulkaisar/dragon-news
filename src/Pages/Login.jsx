@@ -1,11 +1,16 @@
 import Heading2 from "../Components/Heading2";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import LoginForm from "../Components/LoginForm";
 import { useContext } from "react";
 import { UserContext } from "../Context/UserContext";
 
 const Login = () => {
   const { user } = useContext(UserContext);
+  const navigate = useNavigate();
+
+  if (user) {
+    navigate("/");
+  }
 
   return (
     <div className="bg-grayBg py-36 flex justify-center">

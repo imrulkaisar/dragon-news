@@ -62,6 +62,8 @@ const UserContextProvider = ({ children }) => {
         setUser(currentUser);
 
         console.log("Current user:", currentUser);
+      } else {
+        setUser(null);
       }
     });
 
