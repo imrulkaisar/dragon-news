@@ -21,6 +21,9 @@
   h6 {
     @apply text-heading;
   }
+  label {
+    @apply font-semibold;
+  }
 }
 
 nav li .active {

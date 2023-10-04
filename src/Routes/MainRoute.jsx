@@ -5,6 +5,8 @@ import About from "../Pages/About";
 import Career from "../Pages/Career";
 import PostTemplate from "../Layouts/PostTemplate";
 import CategoryTemplate from "../Layouts/CategoryTemplate";
+import Login from "../Pages/Login";
+import Register from "../Pages/Register";
 
 const MainRouters = createBrowserRouter([
   {
@@ -30,6 +32,14 @@ const MainRouters = createBrowserRouter([
       {
         path: "/career",
         element: <Career />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/register",
+        element: <Register />,
       },
     ],
   },

@@ -10,7 +10,8 @@ const PostTemplate = () => {
   const { blogs } = useContext(MainContext);
   const { id } = useParams();
   const post = blogs?.find((blog) => blog._id === id);
-  const editorInsight = blogs.filter((blog) => blog.others_info.is_todays_pick);
+  const editorInsight =
+    blogs?.filter((blog) => blog.others_info.is_todays_pick) || [];
 
   const { title, image_url, details, category_id } = post || {};
 
