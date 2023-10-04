@@ -3,6 +3,7 @@ import PageTemplate from "../Layouts/PageTemplate";
 import Home from "../Pages/Home";
 import About from "../Pages/About";
 import Career from "../Pages/Career";
+import PostTemplate from "../Layouts/PostTemplate";
 
 const MainRouters = createBrowserRouter([
   {
@@ -12,6 +13,10 @@ const MainRouters = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "/post/:id",
+        element: <PostTemplate />,
       },
       {
         path: "/about",

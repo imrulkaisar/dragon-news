@@ -6,7 +6,7 @@ import Rating from "react-rating";
 
 const Article = ({ data }) => {
   const {
-    id,
+    _id,
     title,
     thumbnail_url,
     author: { name, published_date, img },
@@ -44,15 +44,23 @@ const Article = ({ data }) => {
         </div>
       </div>
       <div className="p-5 space-y-4">
-        <Title>{title}</Title>
-        <img className="w-full" src={thumbnail_url} alt="" />
-        <p className="leading-relaxed">
+        <Link to={`/post/${_id}`}>
+          <Title>{title}</Title>
+        </Link>
+
+        <Link to={`/post/${_id}`}>
+          <img className="w-full" src={thumbnail_url} alt="" />
+        </Link>
+
+        <p className="">
           {excerpt}...{" "}
-          <Link>
+          <Link to={`/post/${_id}`}>
             <span className="text-golden font-semibold">Read More</span>
           </Link>
         </p>
+
         <hr />
+
         <div className="flex justify-between">
           <div className="rating flex items-center gap-3 text-xl">
             <Rating

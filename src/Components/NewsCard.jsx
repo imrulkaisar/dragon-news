@@ -4,15 +4,15 @@ import Title from "./Title";
 import { FiCalendar } from "react-icons/fi";
 
 const NewsCard = ({ data }) => {
-  const { title, thumbnail_url } = data;
+  const { _id, title, thumbnail_url } = data;
   return (
     <div className="space-y-3">
-      <Link to={`/post/id`}>
+      <Link to={`/post/${_id}`}>
         <img className="rounded-lg w-full" src={thumbnail_url} alt="" />
       </Link>
 
       <h5>
-        <Link>
+        <Link to={`/post/${_id}`}>
           <Title>{title}</Title>
         </Link>
       </h5>

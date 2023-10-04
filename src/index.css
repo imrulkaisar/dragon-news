@@ -10,7 +10,7 @@
   }
 
   p {
-    @apply text-text;
+    @apply text-text leading-relaxed;
   }
 
   h1,
