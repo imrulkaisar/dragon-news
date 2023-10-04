@@ -7,6 +7,7 @@ import { UserContext } from "../Context/UserContext";
 const Navbar = () => {
   const { user, logOut } = useContext(UserContext);
   const navigate = useNavigate();
+  const { displayName, photoURL } = user || {};
 
   const handleLogout = () => {
     logOut();
@@ -34,7 +35,11 @@ const Navbar = () => {
         </li>
       </ul>
       <div className="flex items-center gap-3">
-        <img className="w-10 h-10" src={userImg} alt="user" />
+        <img
+          className="w-10 h-10 rounded-full"
+          src={photoURL ? photoURL : userImg}
+          alt="user"
+        />
         {user ? (
           <button
             onClick={handleLogout}

@@ -1,8 +1,11 @@
 import { createContext, useEffect, useState } from "react";
 import {
+  GithubAuthProvider,
+  GoogleAuthProvider,
   createUserWithEmailAndPassword,
   onAuthStateChanged,
   signInWithEmailAndPassword,
+  signInWithPopup,
   signOut,
   updateProfile,
 } from "firebase/auth";
@@ -27,6 +30,19 @@ const UserContextProvider = ({ children }) => {
       .then((response) => {
         console.log("Logged In:", response.user);
       })
+      .catch((error) => console.error(error));
+  };
+
+  const loginWithGoogle = () => {
+    const provider = new GoogleAuthProvider();
+    signInWithPopup(auth, provider)
+      .then((response) => console.log("Logged in with google"))
+      .catch((error) => console.error(error));
+  };
+  const loginWithGithub = () => {
+    const provider = new GithubAuthProvider();
+    signInWithPopup(auth, provider)
+      .then((response) => console.log("Logged in github"))
       .catch((error) => console.error(error));
   };
 
@@ -59,6 +75,8 @@ const UserContextProvider = ({ children }) => {
     createUser,
     updateUser,
     login,
+    loginWithGoogle,
+    loginWithGithub,
     logOut,
   };
 
